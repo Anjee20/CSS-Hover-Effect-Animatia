@@ -8,7 +8,7 @@
         <style>
             .common{
                 width: 280px;
-                height: 212px;
+                height: 212px;                
             }
             .box{
                 background-image: url("img/photo-1.jpg");
@@ -16,6 +16,8 @@
                 box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
                 position: relative;
                 overflow: hidden;
+                float: left;
+                margin: 12px;
             }
             .overlay{
                 background:rgba(0, 0, 0, 0.5);
@@ -25,6 +27,14 @@
                 transition: all;
                 transition-duration: 0.4s;
                 transition-timing-function: ease-in-out;
+            }
+            .overlay5{
+                top: 0px;
+                opacity: 0;
+                transition-duration: 0.2s;
+            }
+            .box:hover .overlay5{
+                opacity: 1;
             }
             /*
                 desendent selector
@@ -58,6 +68,21 @@
             .b-anchor{
                 left: 140px !important;
             }
+            .a5_1{
+                left: 50px !important;
+            }
+            .a5_2{
+                left: 180px !important;
+            }
+            .box:hover > .overlay5 .a5_1{
+                left: 90px !important;
+            }
+            .box:hover > .overlay5 .a5_2{
+                left: 140px !important;
+            }
+            .a5_1,.a5_2{
+                transition: all 0.1s linear ;
+            }
         </style>
     </head>
     <body>
@@ -65,6 +90,12 @@
             <div class="common overlay">
                 <a href="#"><i class="fa-solid fa-link"></i></a>
                 <a class="b-anchor" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+            </div>
+        </div>
+        <div class="common box">
+            <div class="common overlay overlay5">
+                <a href="#" class="a5_1"><i class="fa-solid fa-link"></i></a>
+                <a class="b-anchor a5_2" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
             </div>
         </div>
     </body>
